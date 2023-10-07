@@ -36,7 +36,7 @@ public class Egg : MonoBehaviour
         else
         {
             Vector3 pos = transform.position;
-            pos += m_move;
+            pos += m_move * Time.deltaTime;
             m_move *= 0.99f;
             m_MoveCnt--;
 

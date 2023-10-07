@@ -106,7 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpawnEggsprefab: {fileID: 5722961747181472634, guid: c4cc87999a8272848b4fe830e02463af, type: 3}
-  m_move: {x: 0, y: 0, z: 0}
+  m_move: {x: -4, y: 0, z: 0}
+  clip: {fileID: 0}
 --- !u!1001 &428628269784891715
 PrefabInstance:
   m_ObjectHideFlags: 0

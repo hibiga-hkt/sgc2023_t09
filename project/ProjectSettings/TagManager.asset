@@ -12,6 +12,7 @@ TagManager:
   - food
   - Score
   - Time
+  - Obstacle
   layers:
   - Default
   - TransparentFX

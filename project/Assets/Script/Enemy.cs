@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     {
         Vector3 pos = transform.position;
 
-        pos += m_move;
+        pos += m_move * Time.deltaTime;
 
         transform.position = pos;
 

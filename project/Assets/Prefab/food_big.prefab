@@ -89,8 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpawnEggsprefab: {fileID: 5722961747181472634, guid: 59d2f737deb04aa41b422419477e6e5c, type: 3}
-  m_move: {x: 0, y: 0, z: 0}
-  Soundmanager: {fileID: 0}
+  m_move: {x: -3.5, y: 0, z: 0}
   clip: {fileID: 8300000, guid: ef123786f211b614abf95319f1e5f31b, type: 3}
 --- !u!54 &7787910551299433580
 Rigidbody:

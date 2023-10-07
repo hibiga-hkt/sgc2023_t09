@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2186ef464afc5a4098aac750b81267b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_move: {x: -2, y: 0, z: 0}
 --- !u!1001 &7170423980724086384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,4 +174,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1908273389368944141, guid: 86c4f98e42bfa4daf89f7181dfa8e39e, type: 3}
   m_PrefabInstance: {fileID: 7170423980724086384}
   m_PrefabAsset: {fileID: 0}
-  m_move: {x: 0, y: 0, z: 0}

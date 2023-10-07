@@ -23,9 +23,9 @@ public class food : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
+        var pos = transform.position;
 
-        pos += m_move;
+        pos += m_move * Time.deltaTime;
 
         transform.position = pos;
 
@@ -50,7 +50,7 @@ public class food : MonoBehaviour
             GameObject obj = Instantiate(m_SpawnEggsprefab, transform.position, Quaternion.identity);
 
             Egg egg = obj.GetComponent<Egg>();
-            egg.Set(player.transform.position, new Vector3(-0.12f, 0.0f, 0.0f));
+            egg.Set(player.transform.position, new Vector3(-20.12f, 0.0f, 0.0f));
             SoundManager.Instance.PlaySound(clip);
             // é©êgÇè¡Ç∑
             Destroy(gameObject);

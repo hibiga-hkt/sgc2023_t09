@@ -75,8 +75,8 @@ public class Kids : MonoBehaviour
         if (player != null)
         {// éÊìæÇ≈Ç´ÇΩèÍçá
             Vector3 vec = ((player.transform.position + m_setpos) - transform.position);
-            pos.x += vec.x * 0.0075f;
-            pos.y += vec.y * 0.0075f;
+            pos.x += vec.x * 0.065f;
+            pos.y += vec.y * 0.065f;
         }
 
         transform.position = pos;

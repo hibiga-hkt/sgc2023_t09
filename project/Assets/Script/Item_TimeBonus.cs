@@ -24,7 +24,7 @@ public class Item_TimeBonus : MonoBehaviour
     {
         // À•W‚ÌˆÚ“®
         Vector3 pos = transform.position;
-        pos += m_move;
+        pos += m_move * Time.deltaTime;
         transform.position = pos;
 
         // õ–½Šm”F

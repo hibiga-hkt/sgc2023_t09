@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff73694dd8686144ebbfcad57feeb6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_move: {x: -0.01, y: 0, z: 0}
+  m_move: {x: -2, y: 0, z: 0}
 --- !u!65 &7661094840092593872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
             kidsManager.SetFormation();
         }
 
-        pos += m_move;   // ˆÚ“®—Ê‚ð‰ÁŽZ
+        pos += m_move * Time.deltaTime;   // ˆÚ“®—Ê‚ð‰ÁŽZ
 
         // “–‚½‚è”»’è
         //pos.x = Mathf.Clamp(pos.x, leftDown.x, rightUp.x);

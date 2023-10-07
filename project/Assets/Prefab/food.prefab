@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpawnEggsprefab: {fileID: 7748490855213883798, guid: 8e2c9ed7c1c3cd04a81b442db70bcdea, type: 3}
-  m_move: {x: 0, y: 0, z: 0}
+  m_move: {x: -2, y: 0, z: 0}
   clip: {fileID: 8300000, guid: ef123786f211b614abf95319f1e5f31b, type: 3}
 --- !u!54 &7447681825754289953
 Rigidbody:
