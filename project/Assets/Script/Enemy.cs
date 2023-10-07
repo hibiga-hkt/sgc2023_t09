@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_DeadCount = 1000;
+        m_DeadCount = 10000;
     }
 
     // Update is called once per frame

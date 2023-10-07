@@ -930,6 +930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5605701118825132088, guid: 6b8aaf8f144b84a4991fd5d04f9394cc, type: 3}
+      propertyPath: m_TagString
+      value: Time
+      objectReference: {fileID: 0}
     - target: {fileID: 6187357147029038468, guid: 6b8aaf8f144b84a4991fd5d04f9394cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.33549887
@@ -1249,6 +1253,10 @@ PrefabInstance:
     - target: {fileID: 8299690117953969616, guid: b6802e37198480b4b92df6ddeb7bc6d0, type: 3}
       propertyPath: m_Name
       value: ScoreManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299690117953969616, guid: b6802e37198480b4b92df6ddeb7bc6d0, type: 3}
+      propertyPath: m_TagString
+      value: Score
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
