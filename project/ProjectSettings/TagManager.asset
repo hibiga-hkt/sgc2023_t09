@@ -8,6 +8,8 @@ TagManager:
   - Kids
   - GameManager
   - Egg
+  - KidsManager
+  - food
   layers:
   - Default
   - TransparentFX

@@ -41,7 +41,7 @@ public class KidsManager : MonoBehaviour
     public void ListOut(Kids my)
     {
         // リストから自分自身を削除する
-        if (m_Top == this)
+        if (m_Top == my)
         {// 自身が先頭
             if (my.Next != null)
             {// 次が存在している
@@ -54,7 +54,7 @@ public class KidsManager : MonoBehaviour
                 m_Cur = null;  // 最後尾がない状態にする
             }
         }
-        else if (m_Cur == this)
+        else if (m_Cur == my)
         {// 自身が最後尾
             if (my.Prev != null)
             {// 次が存在している
@@ -77,6 +77,51 @@ public class KidsManager : MonoBehaviour
             {
                 my.Prev.Next = my.Next; // 自身の前に次のポインタを覚えさせる
             }
+        }
+
+        Kids.SpawnCnt -= 1;
+
+        // 隊列を再設定
+        SetFormation();
+    }
+
+    public void SetFormation()
+    {
+        // プレイヤーから定位置までの更新
+        GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>(); // マネージャーを取得
+        int SpawnCnt = 0;
+        Kids Obj = m_Top;
+
+        while(Obj != null)
+        {
+            Kids ObjNext = Obj.Next;
+
+            Obj.Set(Obj.transform.position, new Vector3(-2.0f - SpawnCnt / (gamemanager.HeightCnt)
+                 , -((gamemanager.HeightCnt - 1) * 0.5f) + (SpawnCnt % (gamemanager.HeightCnt)), 0.0f));
+
+            Obj = ObjNext;
+
+            SpawnCnt++;
+        }
+    }
+
+    public void SetAvoid()
+    {
+        // プレイヤーから定位置までの更新
+        GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>(); // マネージャーを取得
+        int SpawnCnt = 0;
+        Kids Obj = m_Top;
+
+        while (Obj != null)
+        {
+            Kids ObjNext = Obj.Next;
+
+            Obj.Set(Obj.transform.position, new Vector3(-2.0f - SpawnCnt / (2)
+                 , -((2 - 1) * 0.5f) + (SpawnCnt % (2)), 0.0f));
+
+            Obj = ObjNext;
+
+            SpawnCnt++;
         }
     }
 }

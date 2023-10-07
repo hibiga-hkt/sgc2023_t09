@@ -5,7 +5,7 @@ using UnityEngine;
 public class Kids : MonoBehaviour
 {
     private Vector3 m_setpos;   // プレイヤーからの距離
-    static private int m_nSpawnCnt; // 合計生成数
+    static private int m_nSpawnCnt = 0; // 合計生成数
     private Kids m_Next;        // ネクスト
     private Kids m_prev;        // 手前
 
@@ -40,6 +40,10 @@ public class Kids : MonoBehaviour
         Vector3 rot = transform.eulerAngles;
         rot.y = 90.0f;
         transform.eulerAngles = rot;
+
+        KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
+        kidsManager.ListIn(this);
+        SpawnCnt += 1;
     }
 
     // Update is called once per frame
@@ -64,5 +68,16 @@ public class Kids : MonoBehaviour
     {
         transform.position = pos;
         m_setpos = setpos;
+    }
+
+    private void OnTriggerEnter(Collider colider)
+    {
+        // 敵かどうか確認
+        if (colider.gameObject.CompareTag("Enemy"))
+        {
+            KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
+            kidsManager.ListOut(this);
+            Destroy(gameObject);
+        }
     }
 }

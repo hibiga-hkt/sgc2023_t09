@@ -72,6 +72,17 @@ public class Player : MonoBehaviour
             m_move.y += Mathf.Cos(Mathf.PI * 1.0f) * m_Speed;
         }
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
+            kidsManager.SetAvoid();
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
+            kidsManager.SetFormation();
+        }
+
         pos += m_move;   // 移動量を加算
 
         // 当たり判定

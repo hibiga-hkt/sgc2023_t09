@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
         {// EscƒL[‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
             Quit();
         }
+
+        Debug.Log(Kids.SpawnCnt);
     }
 
     // I—¹
