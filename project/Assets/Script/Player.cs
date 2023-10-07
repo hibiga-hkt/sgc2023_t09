@@ -98,4 +98,16 @@ public class Player : MonoBehaviour
 
         transform.Translate(m_move.x, m_move.y, m_move.z, Space.World); // 移動量を加算
     }
+
+    private void OnTriggerEnter(Collider colider)
+    {
+        // 敵かどうか確認
+        if (colider.gameObject.CompareTag("Enemy") || colider.gameObject.CompareTag("Obstacle"))
+        {
+            // タイムの増加
+            TimerManager timemanager = GameObject.FindGameObjectWithTag("Time").GetComponent<TimerManager>(); // マネージャーを取得
+            timemanager.AddTime(-10);
+            Destroy(colider.gameObject);
+        }
+    }
 }
