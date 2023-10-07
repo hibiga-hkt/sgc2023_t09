@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private float m_Speed;  // ˆÚ“®‘¬“x
     [SerializeField]
     private float m_fMulti; // Šµ«
+
     // Start is called before the first frame update
     void Start()
     {
