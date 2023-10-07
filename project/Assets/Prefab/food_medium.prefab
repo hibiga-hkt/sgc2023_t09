@@ -60,11 +60,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 1, z: 1}
+  m_Size: {x: 2.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3166330258024628198
 Rigidbody:
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SpawnEggsprefab: {fileID: 5722961747181472634, guid: c4cc87999a8272848b4fe830e02463af, type: 3}
   m_move: {x: -4, y: 0, z: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: ef123786f211b614abf95319f1e5f31b, type: 3}
 --- !u!1001 &428628269784891715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,6 +116,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (15)
@@ -178,6 +182,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (11)
@@ -240,6 +248,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (12)
@@ -314,6 +326,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (9)
@@ -376,6 +392,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (8)
@@ -438,6 +458,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (14)
@@ -500,6 +524,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (10)
@@ -566,6 +594,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (7)
@@ -628,6 +660,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (17)
@@ -702,6 +738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (16)
@@ -764,6 +804,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178999571128971232}
     m_Modifications:
+    - target: {fileID: -3137944722043418223, guid: f137bf3859432064594c86035f878b94, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2124660276807132176, guid: f137bf3859432064594c86035f878b94, type: 3}
       propertyPath: m_Name
       value: food (13)
