@@ -9,7 +9,9 @@ public class food : MonoBehaviour
 
     [SerializeField]
     Vector3 m_move; // ˆÚ“®—Ê
-
+  
+    [SerializeField]
+    AudioClip clip;
     private int m_Life;
 
     // Start is called before the first frame update
@@ -49,7 +51,7 @@ public class food : MonoBehaviour
 
             Egg egg = obj.GetComponent<Egg>();
             egg.Set(player.transform.position, new Vector3(-0.12f, 0.0f, 0.0f));
-
+            SoundManager.Instance.PlaySound(clip);
             // ©g‚ğÁ‚·
             Destroy(gameObject);
         }

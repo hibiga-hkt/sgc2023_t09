@@ -3,7 +3,10 @@ guid: e58e73c8e16be6a4aa04788f1cb12cd2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_SpawnEggsprefab: {instanceID: 0}
+  - Soundmanager: {instanceID: 0}
+  - clip: {fileID: 8300000, guid: ef123786f211b614abf95319f1e5f31b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
