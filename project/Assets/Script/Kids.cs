@@ -38,7 +38,7 @@ public class Kids : MonoBehaviour
     {
         // 座標の移動
         Vector3 rot = transform.eulerAngles;
-        rot.y = 90.0f;
+        
         transform.eulerAngles = rot;
 
         KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
