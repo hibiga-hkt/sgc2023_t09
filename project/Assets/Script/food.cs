@@ -10,10 +10,12 @@ public class food : MonoBehaviour
     [SerializeField]
     Vector3 m_move; // à⁄ìÆó 
 
+    private int m_Life;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        m_Life = 10000;
     }
 
     // Update is called once per frame
@@ -28,6 +30,13 @@ public class food : MonoBehaviour
         Vector3 leftDown = Camera.main.ScreenToWorldPoint(new Vector2(0.0f, 0.0f)); // ç∂â∫ÇÃç¿ïW
 
         if (pos.x < leftDown.x)
+        {
+            Destroy(gameObject);
+        }
+
+        m_Life--;
+
+        if(m_Life < 0)
         {
             Destroy(gameObject);
         }
