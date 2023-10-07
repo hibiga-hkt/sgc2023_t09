@@ -7,6 +7,9 @@ public class food : MonoBehaviour
     [SerializeField]
     private GameObject m_SpawnEggsprefab;
 
+    [SerializeField]
+    Vector3 m_move; // à⁄ìÆó 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +19,18 @@ public class food : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 pos = transform.position;
 
+        pos += m_move;
+
+        transform.position = pos;
+
+        Vector3 leftDown = Camera.main.ScreenToWorldPoint(new Vector2(0.0f, 0.0f)); // ç∂â∫ÇÃç¿ïW
+
+        if (pos.x < leftDown.x)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider colider)

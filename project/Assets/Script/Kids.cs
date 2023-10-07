@@ -5,9 +5,13 @@ using UnityEngine;
 public class Kids : MonoBehaviour
 {
     private Vector3 m_setpos;   // プレイヤーからの距離
-    static private int m_nSpawnCnt = 0; // 合計生成数
+    static private int m_nSpawnCnt = -1; // 合計生成数
     private Kids m_Next;        // ネクスト
     private Kids m_prev;        // 手前
+    private int m_Idx;           // 番号
+
+    [SerializeField]
+    private int nAddCount;  // 加算ポイント数
 
     public Kids Next
     {
@@ -33,6 +37,18 @@ public class Kids : MonoBehaviour
         set { m_nSpawnCnt = value; }
     }
 
+    public int Idx
+    {
+        get { return m_Idx; }
+        set { m_Idx = value; }
+    }
+
+    Kids()
+    {
+        m_Idx = SpawnCnt;
+        SpawnCnt += 1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +59,9 @@ public class Kids : MonoBehaviour
 
         KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
         kidsManager.ListIn(this);
-        SpawnCnt += 1;
+
+        ScoreManager scoremanager = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>(); // マネージャーを取得
+        scoremanager.AddScore(nAddCount);
     }
 
     // Update is called once per frame
@@ -77,6 +95,9 @@ public class Kids : MonoBehaviour
         {
             KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
             kidsManager.ListOut(this);
+
+            ScoreManager scoremanager = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>(); // マネージャーを取得
+            scoremanager.AddScore(-nAddCount);
             Destroy(gameObject);
         }
     }

@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class MapData : MonoBehaviour
 {
     [SerializeField]
-    private int m_SpawnCount;   // カウンター
+    private int m_EnemySpawnCount;   // カウンター
 
     [SerializeField]
-    private int m_SetTimer;     // 生成既定タイマー
+    private int m_FoodSpawnCount;
 
     [SerializeField]
-    private EnemyData[] m_aEnemy;  // 生成オブジェクト
+    private int m_EnemySetTimer;     // 生成既定タイマー
+
+    [SerializeField]
+    private int m_FoodSetTimer;     // 生成既定タイマー
+
+    [SerializeField]
+    private EnemyData[] m_aEnemy;  // 生成敵オブジェクト
+
+    [SerializeField]
+    private FoodData[] m_aFood;  // 生成食オブジェクト
 
     [SerializeField]
     private int MinRange;       // 生成最低範囲
@@ -28,14 +37,28 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_SpawnCount++;
+        m_EnemySpawnCount++;
 
         // 生成
-        if(m_SpawnCount > m_SetTimer)
+        if(m_EnemySpawnCount > m_EnemySetTimer)
         {
-            m_SpawnCount = 0;
+            m_EnemySpawnCount = 0;
 
             int nRand = Random.Range(MinRange, MaxRange);
+
+            Enemy enemy = Instantiate(m_aEnemy[nRand].m_prefab, m_aEnemy[nRand].position, Quaternion.identity).GetComponent<Enemy>();
+        }
+
+        m_FoodSpawnCount++;
+
+        // 生成
+        if (m_FoodSpawnCount > m_FoodSetTimer)
+        {
+            m_FoodSpawnCount = 0;
+
+            int nRand = Random.Range(MinRange, MaxRange);
+
+            food Food = Instantiate(m_aFood[nRand].m_prefab, m_aFood[nRand].position, Quaternion.identity).GetComponent<food>();
         }
     }
 }
@@ -52,7 +75,7 @@ public class EnemyData
     public GameObject m_prefab;
 
     // 出現位置
-    public Vector3 m_position;
+    public Vector3 position;
 }
 
 [System.Serializable]   // クラスのデータをインスペクタに表示させるために必要
@@ -67,5 +90,5 @@ public class FoodData
     public GameObject m_prefab;
 
     // 出現位置
-    public Vector3 m_position;
+    public Vector3 position;
 }

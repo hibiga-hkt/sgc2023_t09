@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5798310587905412499}
   - component: {fileID: 2944554753291373597}
+  - component: {fileID: 332731295477614555}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -45,3 +46,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HeightCnt: 3
+--- !u!114 &332731295477614555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515389185974389141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77140d1a6728fa4a88236972077ecd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpawnCount: 0
+  m_SetTimer: 120
+  m_aEnemy: []
+  m_aFood: []
+  MinRange: 0
+  MaxRange: 0
