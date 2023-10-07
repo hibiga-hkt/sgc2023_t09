@@ -91,7 +91,7 @@ public class Kids : MonoBehaviour
     private void OnTriggerEnter(Collider colider)
     {
         // 敵かどうか確認
-        if (colider.gameObject.CompareTag("Enemy"))
+        if (colider.gameObject.CompareTag("Enemy") || colider.gameObject.CompareTag("Obstacle"))
         {
             KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
             kidsManager.ListOut(this);

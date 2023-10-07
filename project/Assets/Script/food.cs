@@ -27,13 +27,6 @@ public class food : MonoBehaviour
 
         transform.position = pos;
 
-        Vector3 leftDown = Camera.main.ScreenToWorldPoint(new Vector2(0.0f, 0.0f)); // ç∂â∫ÇÃç¿ïW
-
-        if (pos.x < leftDown.x)
-        {
-            Destroy(gameObject);
-        }
-
         m_Life--;
 
         if(m_Life < 0)

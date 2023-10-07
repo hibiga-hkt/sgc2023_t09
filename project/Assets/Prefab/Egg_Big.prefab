@@ -789,7 +789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: becc233b90bfb7d4f974baac78ae3b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpawnKidsPrefab: {fileID: 8130139994090384199, guid: 0f480c8c58bf98b429456dd967ce2917, type: 3}
+  m_SpawnKidsPrefab: {fileID: 8130139994090384199, guid: a1ab7813d1532ca42860b35ded495457, type: 3}
 --- !u!1 &6607909071291441011
 GameObject:
   m_ObjectHideFlags: 0
