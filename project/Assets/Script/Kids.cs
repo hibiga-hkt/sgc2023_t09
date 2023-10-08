@@ -54,6 +54,20 @@ public class Kids : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Kids kids = m_prev;
+        int nCount;
+        for (nCount = 0; nCount < GameManager.Instance.HeightCnt; nCount++)
+        {
+            if (kids != null)
+            {
+                kids = kids.m_prev;
+            }
+            else
+            {
+                break;
+            }
+        }
+      
         // 座標の移動
         Vector3 pos = transform.position;
         // プレイヤーから定位置までの更新
@@ -61,9 +75,74 @@ public class Kids : MonoBehaviour
 
         if (player != null)
         {// 取得できた場合
-            Vector3 vec = ((player.transform.position + m_setpos) - transform.position);
-            pos.x += vec.x * 0.065f;
-            pos.y += vec.y * 0.065f;
+            if(nCount == GameManager.Instance.HeightCnt)
+            {
+                if (kids != null)
+                {
+                    Vector3 vec = kids.transform.position - transform.position;
+                    Vector3 dis = vec;
+                    float fDis = 0.0f;
+                    if (dis.x < 0)
+                    {
+                        dis.x *= -1;
+                    }
+                    if (dis.y < 0)
+                    {
+                        dis.y *= -1;
+                    }
+                    fDis += dis.x;
+                    fDis += dis.y;
+                    if (fDis >= 2.5f)
+                    {
+                        pos.x += vec.x * 0.065f;
+                        pos.y += vec.y * 0.065f;
+                    }
+                }
+                else
+                {
+                    Vector3 vec = ((player.transform.position ) - transform.position);
+                    Vector3 dis = vec;
+                    float fDis = 0.0f;
+                    if (dis.x < 0)
+                    {
+                        dis.x *= -1;
+                    }
+                    if (dis.y < 0)
+                    {
+                        dis.y *= -1;
+                    }
+                    fDis += dis.x;
+                    fDis += dis.y;
+                    if (fDis >= 2.5f)
+                    {
+                        pos.x += vec.x * 0.065f;
+                        pos.y += vec.y * 0.065f;
+                    }
+                }
+            }
+            else
+            {
+                m_setpos.x = 0.0f;
+                Vector3 vec = ((player.transform.position +m_setpos) - transform.position);
+                Vector3 dis = vec;
+                float fDis = 0.0f;
+                if (dis.x < 0)
+                {
+                    dis.x *= -1;
+                }
+                if (dis.y < 0)
+                {
+                    dis.y *= -1;
+                }
+                fDis += dis.x;
+                fDis += dis.y;
+                if (fDis >= 2.5f)
+                {
+                    pos.x += vec.x * 0.065f;
+                    pos.y += vec.y * 0.065f;
+                }
+            }
+           
         }
 
         transform.position = pos;
