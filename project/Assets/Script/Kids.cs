@@ -47,7 +47,7 @@ public class Kids : MonoBehaviour
         
         transform.eulerAngles = rot;
 
-        KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
+        KidsManager kidsManager = KidsManager.Instance; // プレイヤーを取得
         kidsManager.ListIn(this);
 
         ScoreManager scoremanager = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>(); // マネージャーを取得
@@ -163,7 +163,7 @@ public class Kids : MonoBehaviour
         // 敵かどうか確認
         if (colider.gameObject.CompareTag("Enemy") || colider.gameObject.CompareTag("Obstacle"))
         {
-            KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
+            KidsManager kidsManager = KidsManager.Instance; // プレイヤーを取得
             kidsManager.ListOut(this);
 
             ScoreManager scoremanager = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>(); // マネージャーを取得

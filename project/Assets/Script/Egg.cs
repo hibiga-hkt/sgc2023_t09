@@ -28,7 +28,7 @@ public class Egg : MonoBehaviour
 
             Kids kids = obj.GetComponent<Kids>();
             kids.Idx = gamemanager.SpawnCnt;
-            //gamemanager.SpawnCnt = gamemanager.SpawnCnt + 1;
+            gamemanager.SpawnCnt = gamemanager.SpawnCnt + 1;
             kids.Set(transform.position, new Vector3(-2.0f - kids.Idx / (gamemanager.HeightCnt)
                 , -((gamemanager.HeightCnt - 1) * 0.5f) + (kids.Idx % (gamemanager.HeightCnt)), 0.0f));
 

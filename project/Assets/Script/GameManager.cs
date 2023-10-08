@@ -7,6 +7,21 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField]
     private int m_HeightCnt;   // 縦に存在する数
 
+    [SerializeField]
+    private int m_SetHeightCnt; // 縦の基準数
+
+    [SerializeField]
+    private int m_HeightLevel;  // 縦の拡張レベル
+
+    [SerializeField]
+    private int[] m_LevelUpNum; // レベルアップの規定数
+
+    [SerializeField]
+    private Camera m_camera;    // カメラ
+
+    [SerializeField]
+    private float m_CamZ;
+
     private int m_nSpawnCnt = 0; // 合計生成数
 
     public int HeightCnt
@@ -30,12 +45,49 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     // Update is called once per frame
     void Update()
     {
+        var OldLevel = m_HeightLevel;
+
+        if (m_HeightLevel - 1 > 0)
+        {
+            if (m_nSpawnCnt < m_LevelUpNum[OldLevel - 1])
+            {
+                m_HeightLevel -= 1;
+
+                if (m_HeightLevel < 0)
+                {
+                    m_HeightLevel = 0;
+                }
+
+                m_HeightCnt = m_SetHeightCnt + m_HeightLevel;
+
+                KidsManager.Instance.SetFormation();
+            }
+        }
+
+
+        if (m_HeightLevel + 1 <= m_LevelUpNum.Length)
+        {
+            if (m_nSpawnCnt >= m_LevelUpNum[m_HeightLevel])
+            {
+                m_HeightLevel += 1;
+
+                if (m_HeightLevel > m_LevelUpNum.Length)
+                {
+                    m_HeightLevel = m_LevelUpNum.Length;
+                }
+
+                m_HeightCnt = m_SetHeightCnt + m_HeightLevel;
+
+                KidsManager.Instance.SetFormation();
+            }
+        }
+
         if (Input.GetKey(KeyCode.Escape))
         {// Escキーが押されたとき
             Quit();
         }
 
-        Debug.Log(SpawnCnt);
+        Debug.Log(m_nSpawnCnt);
     }
 
     // 終了
