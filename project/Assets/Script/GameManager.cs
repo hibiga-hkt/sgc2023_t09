@@ -85,7 +85,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         if (m_nSpawnCnt != m_nSpawnOld)
         {
-            m_camera.transform.position = new Vector3(0.0f, 0.0f, m_CamZ + m_nSpawnCnt * -0.1f);
+            m_camera.transform.position = new Vector3(0.0f, 0.0f, m_CamZ + m_nSpawnCnt * -0.05f);
+            BgManager.Instance.MoveUp((m_nSpawnCnt - m_nSpawnOld) * 2.0f);
         }
 
         m_nSpawnOld = m_nSpawnCnt;

@@ -40,6 +40,8 @@ public class KidsManager : SingletonMonoBehaviour<KidsManager>
 
     public void ListOut(Kids my)
     {
+        GameManager.Instance.SpawnCnt -= 1;
+
         // リストから自分自身を削除する
         if (m_Top == my)
         {// 自身が先頭
@@ -78,8 +80,6 @@ public class KidsManager : SingletonMonoBehaviour<KidsManager>
                 my.Prev.Next = my.Next; // 自身の前に次のポインタを覚えさせる
             }
         }
-
-        GameManager.Instance.SpawnCnt -= 1;
 
         // 隊列を再設定
         SetFormation();
