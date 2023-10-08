@@ -21,12 +21,14 @@ public class Egg : MonoBehaviour
         if(m_MoveCnt < 0)
         {
             // プレイヤーから定位置までの更新
-            GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>(); // マネージャーを取得
+            GameManager gamemanager = GameManager.Instance; // マネージャーを取得
 
             // 子供生成
             GameObject obj = Instantiate(m_SpawnKidsPrefab, transform.position, Quaternion.identity);
 
             Kids kids = obj.GetComponent<Kids>();
+            kids.Idx = gamemanager.SpawnCnt;
+            //gamemanager.SpawnCnt = gamemanager.SpawnCnt + 1;
             kids.Set(transform.position, new Vector3(-2.0f - kids.Idx / (gamemanager.HeightCnt)
                 , -((gamemanager.HeightCnt - 1) * 0.5f) + (kids.Idx % (gamemanager.HeightCnt)), 0.0f));
 

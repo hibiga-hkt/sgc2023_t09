@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [SerializeField]
     private int m_HeightCnt;   // ècÇ…ë∂ç›Ç∑ÇÈêî
+
+    private int m_nSpawnCnt = 0; // çáåvê∂ê¨êî
 
     public int HeightCnt
     {
         get { return m_HeightCnt; }
         set { m_HeightCnt = value; }
+    }
+
+    public int SpawnCnt
+    {
+        get { return m_nSpawnCnt; }
+        set { m_nSpawnCnt = value; }
     }
 
     // Start is called before the first frame update
@@ -27,7 +35,7 @@ public class GameManager : MonoBehaviour
             Quit();
         }
 
-        Debug.Log(Kids.SpawnCnt);
+        Debug.Log(SpawnCnt);
     }
 
     // èIóπ
