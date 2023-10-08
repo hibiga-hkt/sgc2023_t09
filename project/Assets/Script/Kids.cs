@@ -8,7 +8,7 @@ public class Kids : MonoBehaviour
     private Kids m_Next;        // ネクスト
     private Kids m_prev;        // 手前
     private int m_Idx;           // 番号
-
+    private Vector3 m_move;   // 移動量
     [SerializeField]
     private int nAddCount;  // 加算ポイント数
 
@@ -39,6 +39,9 @@ public class Kids : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_move.x = 0;
+        m_move.y = 0;
+        m_move.z = 0;
         // 座標の移動
         Vector3 rot = transform.eulerAngles;
         
@@ -115,8 +118,8 @@ public class Kids : MonoBehaviour
                     fDis += dis.y;
                     if (fDis >= 2.5f)
                     {
-                        pos.x += vec.x * 0.065f;
-                        pos.y += vec.y * 0.065f;
+                        m_move.x += vec.x * 0.0005f;
+                        m_move.y += vec.y * 0.0005f;
                     }
                 }
             }
@@ -138,14 +141,15 @@ public class Kids : MonoBehaviour
                 fDis += dis.y;
                 if (fDis >= 2.5f)
                 {
-                    pos.x += vec.x * 0.065f;
-                    pos.y += vec.y * 0.065f;
+                    m_move.x += vec.x * 0.0005f;
+                    m_move.y += vec.y * 0.0005f;
                 }
             }
            
         }
-
+        pos += m_move;
         transform.position = pos;
+        m_move *= 0.98f;
     }
 
     public void Set(Vector3 pos, Vector3 setpos)
