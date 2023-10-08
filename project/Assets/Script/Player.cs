@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     private float m_fMulti; // ????
     [SerializeField]
     public GameObject particlePrefab; // パーティクルシステムのプレハブをInspectorから設定
-
+    [SerializeField]
+    AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
@@ -112,6 +113,7 @@ public class Player : MonoBehaviour
         // ?G?????????m?F
         if (colider.gameObject.CompareTag("Enemy") || colider.gameObject.CompareTag("Obstacle"))
         {
+            SoundManager.Instance.PlaySound(clip);
             // プレハブをインスタンス化
             GameObject particleSystemInstance = Instantiate(particlePrefab);
 

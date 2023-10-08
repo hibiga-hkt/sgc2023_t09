@@ -13,7 +13,8 @@ public class Kids : MonoBehaviour
     private int nAddCount;  // 加算ポイント数
     [SerializeField]
     public GameObject particlePrefab; // パーティクルシステムのプレハブをInspectorから設定
-
+    [SerializeField]
+    AudioClip clip;
     public Kids Next
     {
         get { return m_Next; }
@@ -165,6 +166,7 @@ public class Kids : MonoBehaviour
         // 敵かどうか確認
         if (colider.gameObject.CompareTag("Enemy") || colider.gameObject.CompareTag("Obstacle"))
         {
+            SoundManager.Instance.PlaySound(clip);
             // プレハブをインスタンス化
             GameObject particleSystemInstance = Instantiate(particlePrefab);
 

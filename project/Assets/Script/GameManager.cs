@@ -25,6 +25,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [SerializeField]
     private float m_CamZ;
 
+    [SerializeField]
+    AudioClip clip;
+
     private int m_nSpawnCnt = 0; // ???v??????
     private int m_nSpawnOld;
 
@@ -121,6 +124,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     public void OnStartButtonClicked()
     {
+        SoundManager.Instance.PlaySound(clip);
         this.IsPlaying = true;
         this.titleAnimator.Play("Out");
     }

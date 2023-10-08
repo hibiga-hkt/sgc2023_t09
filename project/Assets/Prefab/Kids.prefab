@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nAddCount: 10
   particlePrefab: {fileID: 7929831783809183919, guid: 3c24494ec38014a4188c60d01c0fb8a9, type: 3}
+  clip: {fileID: 8300000, guid: 369110a5afa12ff488a876293c408555, type: 3}
 --- !u!1001 &602975354282525041
 PrefabInstance:
   m_ObjectHideFlags: 0
