@@ -16,7 +16,7 @@ public class Item_TimeBonus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_Life = 1000;
+      
     }
 
     // Update is called once per frame
