@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KidsManager : MonoBehaviour
+public class KidsManager : SingletonMonoBehaviour<KidsManager>
 {
     Kids m_Top; // æ“ª
     Kids m_Cur; // ÅŒã
@@ -36,9 +36,6 @@ public class KidsManager : MonoBehaviour
             m_Top = my;  // ©•ª©g‚ªæ“ª‚É‚È‚é
             m_Cur = my;  // ©•ª©g‚ªÅŒã”ö‚É‚È‚é
         }
-
-        my.Idx = GameManager.Instance.SpawnCnt;
-        GameManager.Instance.SpawnCnt += 1;
     }
 
     public void ListOut(Kids my)

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &587656564 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5089735293141472426, guid: b417af759a1e5a74cbc8f6785057bda9, type: 3}
+  m_PrefabInstance: {fileID: 9061532501052207995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1098869436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 689064218311682003, guid: 23ca9da98502f4a40add72cfeae000c6, type: 3}
@@ -622,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 332731295477614555, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_FoodSetTimer
-      value: 200
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 332731295477614555, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_ItemSetTimer
@@ -1137,8 +1142,72 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_camera
+      value: 
+      objectReference: {fileID: 587656564}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_HeightCnt
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_SetHeightCnt
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[1]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[2]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[3]
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[4]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[5]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[6]
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[7]
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[8]
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[9]
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[10]
+      value: 330
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[11]
+      value: 390
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_LevelUpNum.Array.data[12]
+      value: 440
       objectReference: {fileID: 0}
     - target: {fileID: 5798310587905412499, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_LocalPosition.x
