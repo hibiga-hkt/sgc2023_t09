@@ -5,37 +5,37 @@ using UnityEngine;
 public class MapData : MonoBehaviour
 {
     [SerializeField]
-    private int m_EnemySpawnCount;   // カウンター
+    private int m_EnemySpawnCount;   // ?J?E???^?[
     [SerializeField]
-    private int m_EnemySetTimer;     // 生成既定タイマー
+    private int m_EnemySetTimer;     // ?????????^?C?}?[
     [SerializeField]
-    private EnemyData[] m_aEnemy;  // 生成敵オブジェクト
+    private EnemyData[] m_aEnemy;  // ?????G?I?u?W?F?N?g
 
     [SerializeField]
-    private int m_FoodSpawnCount;   // カウンター
+    private int m_FoodSpawnCount;   // ?J?E???^?[
     [SerializeField]
-    private int m_FoodSetTimer;     // 生成既定タイマー
+    private int m_FoodSetTimer;     // ?????????^?C?}?[
     [SerializeField]
-    private FoodData[] m_aFood;  // 生成食オブジェクト
+    private FoodData[] m_aFood;  // ?????H?I?u?W?F?N?g
 
     [SerializeField]
-    private int m_ObstaSpawnCount;   // カウンター
+    private int m_ObstaSpawnCount;   // ?J?E???^?[
     [SerializeField]
-    private int m_ObstaSetTimer;     // 生成既定タイマー
+    private int m_ObstaSetTimer;     // ?????????^?C?}?[
     [SerializeField]
-    private FoodData[] m_aObsta;  // 生成食オブジェクト
+    private FoodData[] m_aObsta;  // ?????H?I?u?W?F?N?g
 
     [SerializeField]
-    private int m_ItemSpawnCount;   // カウンター
+    private int m_ItemSpawnCount;   // ?J?E???^?[
     [SerializeField]
-    private int m_ItemSetTimer;     // 生成既定タイマー
+    private int m_ItemSetTimer;     // ?????????^?C?}?[
     [SerializeField]
-    private ItemData[] m_aItem;  // 生成食オブジェクト
+    private ItemData[] m_aItem;  // ?????H?I?u?W?F?N?g
 
     [SerializeField]
-    private int MinRange;       // 生成最低範囲
+    private int MinRange;       // ????????????
     [SerializeField]
-    private int MaxRange;       // 生成最大範囲
+    private int MaxRange;       // ????????????
 
     // Start is called before the first frame update
     void Start()
@@ -46,9 +46,14 @@ public class MapData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.Instance.IsPlaying)
+        {
+            return;
+        }
+
         m_EnemySpawnCount++;
 
-        // 生成
+        // ????
         if (m_EnemySpawnCount > m_EnemySetTimer)
         {
             m_EnemySpawnCount = 0;
@@ -60,7 +65,7 @@ public class MapData : MonoBehaviour
 
         m_FoodSpawnCount++;
 
-        // 生成
+        // ????
         if (m_FoodSpawnCount > m_FoodSetTimer)
         {
             m_FoodSpawnCount = 0;
@@ -72,7 +77,7 @@ public class MapData : MonoBehaviour
 
         m_ObstaSpawnCount++;
 
-        // 生成
+        // ????
         if (m_ObstaSpawnCount > m_ObstaSetTimer)
         {
             m_ObstaSpawnCount = 0;
@@ -90,7 +95,7 @@ public class MapData : MonoBehaviour
                 m_ItemSpawnCount++;
             }
         }
-        // 生成
+        // ????
         if (m_ItemSpawnCount > m_ObstaSetTimer)
         {
             m_ItemSpawnCount = 0;
@@ -102,62 +107,62 @@ public class MapData : MonoBehaviour
     }
 }
 
-[System.Serializable]   // クラスのデータをインスペクタに表示させるために必要
+[System.Serializable]   // ?N???X???f?[?^???C???X?y?N?^???\???????????????K?v
 public class EnemyData
 {
-    // 名前
+    // ???O
     [HideInInspector]
     public string m_name;
-    // [HideInInspector] インスペクタ上で非表示にする
+    // [HideInInspector] ?C???X?y?N?^???????\????????
 
-    // 生成するプレハブ
+    // ?????????v???n?u
     public GameObject m_prefab;
 
-    // 出現位置
+    // ?o?????u
     public Vector3 position;
 }
 
-[System.Serializable]   // クラスのデータをインスペクタに表示させるために必要
+[System.Serializable]   // ?N???X???f?[?^???C???X?y?N?^???\???????????????K?v
 public class FoodData
 {
-    // 名前
+    // ???O
     [HideInInspector]
     public string m_name;
-    // [HideInInspector] インスペクタ上で非表示にする
+    // [HideInInspector] ?C???X?y?N?^???????\????????
 
-    // 生成するプレハブ
+    // ?????????v???n?u
     public GameObject m_prefab;
 
-    // 出現位置
+    // ?o?????u
     public Vector3 position;
 }
 
-[System.Serializable]   // クラスのデータをインスペクタに表示させるために必要
+[System.Serializable]   // ?N???X???f?[?^???C???X?y?N?^???\???????????????K?v
 public class ObstacleData
 {
-    // 名前
+    // ???O
     [HideInInspector]
     public string m_name;
-    // [HideInInspector] インスペクタ上で非表示にする
+    // [HideInInspector] ?C???X?y?N?^???????\????????
 
-    // 生成するプレハブ
+    // ?????????v???n?u
     public GameObject m_prefab;
 
-    // 出現位置
+    // ?o?????u
     public Vector3 position;
 }
 
-[System.Serializable]   // クラスのデータをインスペクタに表示させるために必要
+[System.Serializable]   // ?N???X???f?[?^???C???X?y?N?^???\???????????????K?v
 public class ItemData
 {
-    // 名前
+    // ???O
     [HideInInspector]
     public string m_name;
-    // [HideInInspector] インスペクタ上で非表示にする
+    // [HideInInspector] ?C???X?y?N?^???????\????????
 
-    // 生成するプレハブ
+    // ?????????v???n?u
     public GameObject m_prefab;
 
-    // 出現位置
+    // ?o?????u
     public Vector3 position;
 }

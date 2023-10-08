@@ -15,8 +15,12 @@ public sealed class BgManager : SingletonMonoBehaviour<BgManager>
 
     private void Update()
     {
-        // test
-        //this.MoveUp(5.0f);
+        this.transform.Rotate(Vector3.up, -this.rotateSpeed * Time.deltaTime);
+
+        if (!GameManager.Instance.IsPlaying)
+        {
+            return;
+        }
 
         this.transform.Rotate(Vector3.up, -this.rotateSpeed * Time.deltaTime);
 

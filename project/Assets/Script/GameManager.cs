@@ -5,25 +5,30 @@ using UnityEngine;
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     [SerializeField]
-    private int m_HeightCnt;   // c‚É‘¶İ‚·‚é”
+    private Animator titleAnimator;
 
     [SerializeField]
-    private int m_SetHeightCnt; // c‚ÌŠî€”
+    private int m_HeightCnt;   // Ã¨cÃ‡â€¦Ã«âˆ‚Ã§â€ºÃ‡âˆ‘Ã‡ÃˆÃªÃ® 
 
     [SerializeField]
-    private int m_HeightLevel;  // c‚ÌŠg’£ƒŒƒxƒ‹
+    private int m_SetHeightCnt; // ?c????????
 
     [SerializeField]
-    private int[] m_LevelUpNum; // ƒŒƒxƒ‹ƒAƒbƒv‚Ì‹K’è”
+    private int m_HeightLevel;  // ?c???g?????x??
 
     [SerializeField]
-    private Camera m_camera;    // ƒJƒƒ‰
+    private int[] m_LevelUpNum; // ???x???A?b?v???K????
+
+    [SerializeField]
+    private Camera m_camera;    // ?J????
 
     [SerializeField]
     private float m_CamZ;
 
-    private int m_nSpawnCnt = 0; // ‡Œv¶¬”
+    private int m_nSpawnCnt = 0; // ???v??????
     private int m_nSpawnOld;
+
+    public bool IsPlaying { get; private set; }
 
     public int HeightCnt
     {
@@ -46,6 +51,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     // Update is called once per frame
     void Update()
     {
+        if (!this.IsPlaying)
+        {
+            return;
+        }
+
         var OldLevel = m_HeightLevel;
 
         if (m_HeightLevel - 1 > 0)
@@ -92,20 +102,26 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         m_nSpawnOld = m_nSpawnCnt;
 
         if (Input.GetKey(KeyCode.Escape))
-        {// EscƒL[‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+        {// EscÃ‰LÃ…[Ã‡â„¢Ã¢Ã¼Ã‡â‰¥Ã‡ÃÃ‡Î©Ã‡âˆ†Ã‡Â´
             Quit();
         }
 
         Debug.Log(m_nSpawnCnt);
     }
 
-    // I—¹
+    // Ã¨IÃ³Ï€
     void Quit()
     {
-#if UNITY_EDITOR    // ƒGƒfƒBƒ^[
+#if UNITY_EDITOR    // Ã‰GÃ‰fÃ‰BÃ‰^Ã…[
         UnityEditor.EditorApplication.isPlaying = false;
-#elif UNITY_STANDALONE  // Às
+#elif UNITY_STANDALONE  // Ã©Â¿Ã§s
         UnityEngine.Application.Quit();
 #endif
+    }
+
+    public void OnStartButtonClicked()
+    {
+        this.IsPlaying = true;
+        this.titleAnimator.Play("Out");
     }
 }

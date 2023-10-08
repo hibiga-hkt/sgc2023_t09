@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Vector3 m_move; // 移動量
+    private Vector3 m_move; // ??????
 
     [SerializeField]
-    private float m_Speed;  // 移動速度
+    private float m_Speed;  // ???????x
     [SerializeField]
-    private float m_fMulti; // 慣性
+    private float m_fMulti; // ????
 
     // Start is called before the first frame update
     void Start()
@@ -20,93 +20,98 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 当たり判定
-        Vector3 pos = transform.position;   // 移動後の座標を取得
+        if (!GameManager.Instance.IsPlaying)
+        {
+            return;
+        }
 
-        // 画面の判定座標を取得
-        Vector3 leftDown = Camera.main.ScreenToWorldPoint(new Vector2(-Screen.width, -Screen.height)); // 左下の座標
-        Vector3 rightUp = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)); // 右上の座標
+        // ??????????
+        Vector3 pos = transform.position;   // ???????????W??????
 
-        // スプライトの幅高さ取得
+        // ?????????????W??????
+        Vector3 leftDown = Camera.main.ScreenToWorldPoint(new Vector2(-Screen.width, -Screen.height)); // ?????????W
+        Vector3 rightUp = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)); // ?E???????W
 
-        // 移動
+        // ?X?v???C?g????????????
+
+        // ????
         if (Input.GetKey(KeyCode.A))
-        {// Aキーが押されたとき
+        {// A?L?[??????????????
             if (Input.GetKey(KeyCode.W))
-            {// Wキーが押されたとき
+            {// W?L?[??????????????
                 m_move.x += Mathf.Sin(-Mathf.PI * 0.25f) * m_Speed * Time.deltaTime;
                 m_move.y += Mathf.Cos(-Mathf.PI * 0.25f) * m_Speed * Time.deltaTime;
             }
             else if (Input.GetKey(KeyCode.S))
-            {// Sキーが押されたとき
+            {// S?L?[??????????????
                 m_move.x += Mathf.Sin(-Mathf.PI * 0.75f) * m_Speed * Time.deltaTime;
                 m_move.y += Mathf.Cos(-Mathf.PI * 0.75f) * m_Speed * Time.deltaTime;
             }
             else
-            {// 同時押しされていない
+            {// ????????????????????
                 m_move.x += Mathf.Sin(-Mathf.PI * 0.5f) * m_Speed * Time.deltaTime;
             }
         }
         else if (Input.GetKey(KeyCode.D))
-        {// Dキーが押されたとき
+        {// D?L?[??????????????
             if (Input.GetKey(KeyCode.W))
-            {// Wキーが押されたとき
+            {// W?L?[??????????????
                 m_move.x += Mathf.Sin(Mathf.PI * 0.25f) * m_Speed * Time.deltaTime;
                 m_move.y += Mathf.Cos(Mathf.PI * 0.25f) * m_Speed * Time.deltaTime;
             }
             else if (Input.GetKey(KeyCode.S))
-            {// Sキーが押されたとき
+            {// S?L?[??????????????
                 m_move.x += Mathf.Sin(Mathf.PI * 0.75f) * m_Speed * Time.deltaTime;
                 m_move.y += Mathf.Cos(Mathf.PI * 0.75f) * m_Speed * Time.deltaTime;
             }
             else
-            {// 同時押しされていない
+            {// ????????????????????
                 m_move.x += Mathf.Sin(Mathf.PI * 0.5f) * m_Speed * Time.deltaTime;
             }
         }
         else if (Input.GetKey(KeyCode.W))
-        {// Wキーが押されたとき
+        {// W?L?[??????????????
             m_move.y += Mathf.Cos(Mathf.PI * 0.0f) * m_Speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.S))
-        {// Sキーが押されたとき
+        {// S?L?[??????????????
             m_move.y += Mathf.Cos(Mathf.PI * 1.0f) * m_Speed * Time.deltaTime;
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
+            KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // ?v???C???[??????
             kidsManager.SetAvoid();
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
-            KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // プレイヤーを取得
+            KidsManager kidsManager = GameObject.FindGameObjectWithTag("KidsManager").GetComponent<KidsManager>(); // ?v???C???[??????
             kidsManager.SetFormation();
         }
 
-        pos += m_move;   // 移動量を加算
+        pos += m_move;   // ???????????Z
 
-        // 当たり判定
+        // ??????????
         //pos.x = Mathf.Clamp(pos.x, leftDown.x, rightUp.x);
         //pos.y = Mathf.Clamp(pos.y, leftDown.y, rightUp.y);
 
-        // 移動量減衰
-        m_move.x += (0.0f - m_move.x) * m_fMulti;   //x座標
-        m_move.y += (0.0f - m_move.y) * m_fMulti;	//y座標
+        // ??????????
+        m_move.x += (0.0f - m_move.x) * m_fMulti;   //x???W
+        m_move.y += (0.0f - m_move.y) * m_fMulti;	//y???W
 
-        // 座標更新
+        // ???W?X?V
         transform.position = pos;
 
-        transform.Translate(m_move.x, m_move.y, m_move.z, Space.World); // 移動量を加算
+        transform.Translate(m_move.x, m_move.y, m_move.z, Space.World); // ???????????Z
     }
 
     private void OnTriggerEnter(Collider colider)
     {
-        // 敵かどうか確認
+        // ?G?????????m?F
         if (colider.gameObject.CompareTag("Enemy") || colider.gameObject.CompareTag("Obstacle"))
         {
-            // タイムの増加
-            TimerManager timemanager = GameObject.FindGameObjectWithTag("Time").GetComponent<TimerManager>(); // マネージャーを取得
+            // ?^?C????????
+            TimerManager timemanager = GameObject.FindGameObjectWithTag("Time").GetComponent<TimerManager>(); // ?}?l?[?W???[??????
             timemanager.AddTime(-10);
             Destroy(colider.gameObject);
         }
