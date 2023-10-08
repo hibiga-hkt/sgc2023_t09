@@ -23,6 +23,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private float m_CamZ;
 
     private int m_nSpawnCnt = 0; // ‡Œv¶¬”
+    private int m_nSpawnOld;
 
     public int HeightCnt
     {
@@ -81,6 +82,13 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
                 KidsManager.Instance.SetFormation();
             }
         }
+
+        if (m_nSpawnCnt != m_nSpawnOld)
+        {
+            m_camera.transform.position = new Vector3(0.0f, 0.0f, m_CamZ + m_nSpawnCnt * -0.1f);
+        }
+
+        m_nSpawnOld = m_nSpawnCnt;
 
         if (Input.GetKey(KeyCode.Escape))
         {// EscƒL[‚ª‰Ÿ‚³‚ê‚½‚Æ‚«

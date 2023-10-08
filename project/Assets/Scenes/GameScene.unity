@@ -1142,6 +1142,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
+      propertyPath: m_CamZ
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 587656564}
