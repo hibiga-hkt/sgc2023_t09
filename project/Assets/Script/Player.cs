@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
         {
             // ?^?C????????
             TimerManager timemanager = GameObject.FindGameObjectWithTag("Time").GetComponent<TimerManager>(); // ?}?l?[?W???[??????
-            timemanager.AddTime(-10);
+            timemanager.AddTime(-2);
             Destroy(colider.gameObject);
         }
     }
