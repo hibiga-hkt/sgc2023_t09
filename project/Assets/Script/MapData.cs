@@ -77,9 +77,9 @@ public class MapData : MonoBehaviour
         {
             m_ObstaSpawnCount = 0;
 
-            int nRand = Random.Range(MinRange, MaxRange);
+            var nRand = Random.Range(MinRange, MaxRange);
 
-            Obstacle Obstacle = Instantiate(m_aObsta[nRand].m_prefab, m_aObsta[nRand].position, Quaternion.identity).GetComponent<Obstacle>();
+            var Obstacle = Instantiate(m_aObsta[nRand].m_prefab, m_aObsta[nRand].position, Quaternion.identity).GetComponent<Obstacle>();
         }
 
 
