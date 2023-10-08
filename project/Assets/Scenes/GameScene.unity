@@ -663,6 +663,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1866038206151477736, guid: 6b8aaf8f144b84a4991fd5d04f9394cc, type: 3}
+      propertyPath: fTime
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1866038206151477736, guid: 6b8aaf8f144b84a4991fd5d04f9394cc, type: 3}
       propertyPath: m_TimeText
       value: 
       objectReference: {fileID: 1098869436}
@@ -870,7 +874,7 @@ PrefabInstance:
     - target: {fileID: 332731295477614555, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_aEnemy.Array.data[6].m_prefab
       value: 
-      objectReference: {fileID: 5536814941961132350, guid: b52e3492103d47246aabce5f16fe9ae4, type: 3}
+      objectReference: {fileID: 3545200737042189128, guid: a28bddc29fdc38f4ca6dabad16ca2bf9, type: 3}
     - target: {fileID: 332731295477614555, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_aEnemy.Array.data[7].m_prefab
       value: 
@@ -1133,11 +1137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 332731295477614555, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_aEnemy.Array.data[6].position.x
-      value: 21
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 332731295477614555, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_aEnemy.Array.data[6].position.y
-      value: 1
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 332731295477614555, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_aEnemy.Array.data[7].position.x
@@ -1253,7 +1257,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: f169aa1ccb51c8f4889af9aee143f2dd, type: 3}
     - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_CamZ
-      value: -15
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 2944554753291373597, guid: bd811b54c0135d44ca37bdb36be9d3ea, type: 3}
       propertyPath: m_camera
@@ -1557,6 +1561,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8299690117953969616, guid: b6802e37198480b4b92df6ddeb7bc6d0, type: 3}
+      propertyPath: m_TagString
+      value: Score
+      objectReference: {fileID: 0}
     - target: {fileID: 2290810643816924258, guid: b417af759a1e5a74cbc8f6785057bda9, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1567,11 +1575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5039187982911995240, guid: b417af759a1e5a74cbc8f6785057bda9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5039187982911995240, guid: b417af759a1e5a74cbc8f6785057bda9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 5039187982911995240, guid: b417af759a1e5a74cbc8f6785057bda9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1604,10 +1612,6 @@ PrefabInstance:
     - target: {fileID: 5089735293141472426, guid: b417af759a1e5a74cbc8f6785057bda9, type: 3}
       propertyPath: field of view
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299690117953969616, guid: b6802e37198480b4b92df6ddeb7bc6d0, type: 3}
-      propertyPath: m_TagString
-      value: Score
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

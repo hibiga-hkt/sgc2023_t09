@@ -38,7 +38,7 @@ public class Item_TimeBonus : MonoBehaviour
     private void OnTriggerEnter(Collider colider)
     {
         // 敵かどうか確認
-        if (colider.gameObject.CompareTag("Player") || colider.gameObject.CompareTag("Kids"))
+        if (colider.gameObject.CompareTag("Player"))
         {
             // タイムの増加
             TimerManager timemanager = GameObject.FindGameObjectWithTag("Time").GetComponent<TimerManager>(); // マネージャーを取得
