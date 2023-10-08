@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private float m_Speed;  // ???????x
     [SerializeField]
     private float m_fMulti; // ????
+    [SerializeField]
+    public GameObject particlePrefab; // パーティクルシステムのプレハブをInspectorから設定
 
     // Start is called before the first frame update
     void Start()
@@ -110,6 +112,13 @@ public class Player : MonoBehaviour
         // ?G?????????m?F
         if (colider.gameObject.CompareTag("Enemy") || colider.gameObject.CompareTag("Obstacle"))
         {
+            // プレハブをインスタンス化
+            GameObject particleSystemInstance = Instantiate(particlePrefab);
+
+            // パーティクルシステムをアクティブにする
+            ParticleSystem particleSystem = particleSystemInstance.GetComponent<ParticleSystem>();
+            particleSystemInstance.transform.position = transform.position;
+            particleSystem.Play();
             // ?^?C????????
             TimerManager timemanager = GameObject.FindGameObjectWithTag("Time").GetComponent<TimerManager>(); // ?}?l?[?W???[??????
             timemanager.AddTime(-2);
