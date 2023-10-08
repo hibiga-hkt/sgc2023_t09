@@ -11,6 +11,8 @@ public class Kids : MonoBehaviour
     private Vector3 m_move;   // 移動量
     [SerializeField]
     private int nAddCount;  // 加算ポイント数
+    [SerializeField]
+    public GameObject particlePrefab; // パーティクルシステムのプレハブをInspectorから設定
 
     public Kids Next
     {
@@ -118,8 +120,8 @@ public class Kids : MonoBehaviour
                     fDis += dis.y;
                     if (fDis >= 2.5f)
                     {
-                        m_move.x += vec.x * 0.0005f;
-                        m_move.y += vec.y * 0.0005f;
+                        m_move.x += vec.x * 0.0003f;
+                        m_move.y += vec.y * 0.0003f;
                     }
                 }
             }
@@ -141,8 +143,8 @@ public class Kids : MonoBehaviour
                 fDis += dis.y;
                 if (fDis >= 2.5f)
                 {
-                    m_move.x += vec.x * 0.0005f;
-                    m_move.y += vec.y * 0.0005f;
+                    m_move.x += vec.x * 0.0003f;
+                    m_move.y += vec.y * 0.0003f;
                 }
             }
            
@@ -163,6 +165,14 @@ public class Kids : MonoBehaviour
         // 敵かどうか確認
         if (colider.gameObject.CompareTag("Enemy") || colider.gameObject.CompareTag("Obstacle"))
         {
+            // プレハブをインスタンス化
+            GameObject particleSystemInstance = Instantiate(particlePrefab);
+
+            // パーティクルシステムをアクティブにする
+            ParticleSystem particleSystem = particleSystemInstance.GetComponent<ParticleSystem>();
+            particleSystemInstance.transform.position = transform.position;
+            particleSystem.Play();
+
             KidsManager kidsManager = KidsManager.Instance; // プレイヤーを取得
             kidsManager.ListOut(this);
 
