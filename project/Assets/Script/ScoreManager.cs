@@ -21,6 +21,6 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int addScore)
     {
         nSunFish += addScore;
-        m_scoreText.GetComponent<Text>().text = "Score:" + this.nSunFish.ToString("D9");
+        m_scoreText.GetComponent<Text>().text = this.nSunFish.ToString("D9");
     }
 }

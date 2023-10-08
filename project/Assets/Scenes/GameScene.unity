@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -143,7 +143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3225091207870067326, guid: ebd5dd5084be74a21b7c5417c01f4bdf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3225091207870067326, guid: ebd5dd5084be74a21b7c5417c01f4bdf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -152,7 +152,7 @@ PrefabInstance:
     - target: {fileID: 3225091207870067326, guid: ebd5dd5084be74a21b7c5417c01f4bdf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1572500104}
     - target: {fileID: 3225091207870067326, guid: ebd5dd5084be74a21b7c5417c01f4bdf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -226,6 +226,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebd5dd5084be74a21b7c5417c01f4bdf, type: 3}
+--- !u!95 &1144973345 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5699695980983181889, guid: ebd5dd5084be74a21b7c5417c01f4bdf, type: 3}
+  m_PrefabInstance: {fileID: 1144973344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1164455178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -234,6 +239,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 180551835028055247, guid: d4bed607e91ceef488f6c8221d1b2270, type: 3}
+      propertyPath: m_camera
+      value: 
+      objectReference: {fileID: 587656564}
+    - target: {fileID: 180551835028055247, guid: d4bed607e91ceef488f6c8221d1b2270, type: 3}
+      propertyPath: titleAnimator
+      value: 
+      objectReference: {fileID: 1144973345}
     - target: {fileID: 553271409409012873, guid: d4bed607e91ceef488f6c8221d1b2270, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.33549887
@@ -462,6 +475,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fe1a9eec466042769251e98fcf1c1d8, type: 3}
+--- !u!114 &1572500104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 180551835028055247, guid: d4bed607e91ceef488f6c8221d1b2270, type: 3}
+  m_PrefabInstance: {fileID: 1164455178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992ba66cdd5ed9b40bae2cefde2f9710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &867330769810700352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -953,6 +977,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8299690117953969616, guid: b6802e37198480b4b92df6ddeb7bc6d0, type: 3}
+      propertyPath: m_TagString
+      value: Score
+      objectReference: {fileID: 0}
     - target: {fileID: 2290810643816924258, guid: b417af759a1e5a74cbc8f6785057bda9, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1000,10 +1028,6 @@ PrefabInstance:
     - target: {fileID: 5089735293141472426, guid: b417af759a1e5a74cbc8f6785057bda9, type: 3}
       propertyPath: field of view
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299690117953969616, guid: b6802e37198480b4b92df6ddeb7bc6d0, type: 3}
-      propertyPath: m_TagString
-      value: Score
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

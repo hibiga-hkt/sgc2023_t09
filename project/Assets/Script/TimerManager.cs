@@ -24,7 +24,7 @@ public class TimerManager : MonoBehaviour
         }
 
     
-        m_TimeText.GetComponent<Text>().text = "TIME:" + TimeCount.ToString("00.0");
+        m_TimeText.GetComponent<Text>().text = TimeCount.ToString("00.0");
     }
 
     public void AddTime(float Add)
