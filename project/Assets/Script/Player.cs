@@ -34,43 +34,43 @@ public class Player : MonoBehaviour
         {// Aキーが押されたとき
             if (Input.GetKey(KeyCode.W))
             {// Wキーが押されたとき
-                m_move.x += Mathf.Sin(-Mathf.PI * 0.25f) * m_Speed;
-                m_move.y += Mathf.Cos(-Mathf.PI * 0.25f) * m_Speed;
+                m_move.x += Mathf.Sin(-Mathf.PI * 0.25f) * m_Speed * Time.deltaTime;
+                m_move.y += Mathf.Cos(-Mathf.PI * 0.25f) * m_Speed * Time.deltaTime;
             }
             else if (Input.GetKey(KeyCode.S))
             {// Sキーが押されたとき
-                m_move.x += Mathf.Sin(-Mathf.PI * 0.75f) * m_Speed;
-                m_move.y += Mathf.Cos(-Mathf.PI * 0.75f) * m_Speed;
+                m_move.x += Mathf.Sin(-Mathf.PI * 0.75f) * m_Speed * Time.deltaTime;
+                m_move.y += Mathf.Cos(-Mathf.PI * 0.75f) * m_Speed * Time.deltaTime;
             }
             else
             {// 同時押しされていない
-                m_move.x += Mathf.Sin(-Mathf.PI * 0.5f) * m_Speed;
+                m_move.x += Mathf.Sin(-Mathf.PI * 0.5f) * m_Speed * Time.deltaTime;
             }
         }
         else if (Input.GetKey(KeyCode.D))
         {// Dキーが押されたとき
             if (Input.GetKey(KeyCode.W))
             {// Wキーが押されたとき
-                m_move.x += Mathf.Sin(Mathf.PI * 0.25f) * m_Speed;
-                m_move.y += Mathf.Cos(Mathf.PI * 0.25f) * m_Speed;
+                m_move.x += Mathf.Sin(Mathf.PI * 0.25f) * m_Speed * Time.deltaTime;
+                m_move.y += Mathf.Cos(Mathf.PI * 0.25f) * m_Speed * Time.deltaTime;
             }
             else if (Input.GetKey(KeyCode.S))
             {// Sキーが押されたとき
-                m_move.x += Mathf.Sin(Mathf.PI * 0.75f) * m_Speed;
-                m_move.y += Mathf.Cos(Mathf.PI * 0.75f) * m_Speed;
+                m_move.x += Mathf.Sin(Mathf.PI * 0.75f) * m_Speed * Time.deltaTime;
+                m_move.y += Mathf.Cos(Mathf.PI * 0.75f) * m_Speed * Time.deltaTime;
             }
             else
             {// 同時押しされていない
-                m_move.x += Mathf.Sin(Mathf.PI * 0.5f) * m_Speed;
+                m_move.x += Mathf.Sin(Mathf.PI * 0.5f) * m_Speed * Time.deltaTime;
             }
         }
         else if (Input.GetKey(KeyCode.W))
         {// Wキーが押されたとき
-            m_move.y += Mathf.Cos(Mathf.PI * 0.0f) * m_Speed;
+            m_move.y += Mathf.Cos(Mathf.PI * 0.0f) * m_Speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.S))
         {// Sキーが押されたとき
-            m_move.y += Mathf.Cos(Mathf.PI * 1.0f) * m_Speed;
+            m_move.y += Mathf.Cos(Mathf.PI * 1.0f) * m_Speed * Time.deltaTime;
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
             kidsManager.SetFormation();
         }
 
-        pos += m_move * Time.deltaTime;   // 移動量を加算
+        pos += m_move;   // 移動量を加算
 
         // 当たり判定
         //pos.x = Mathf.Clamp(pos.x, leftDown.x, rightUp.x);

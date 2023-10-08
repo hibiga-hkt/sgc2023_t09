@@ -36,6 +36,9 @@ public class KidsManager : MonoBehaviour
             m_Top = my;  // 自分自身が先頭になる
             m_Cur = my;  // 自分自身が最後尾になる
         }
+
+        my.Idx = GameManager.Instance.SpawnCnt;
+        GameManager.Instance.SpawnCnt += 1;
     }
 
     public void ListOut(Kids my)
@@ -79,7 +82,7 @@ public class KidsManager : MonoBehaviour
             }
         }
 
-        Kids.SpawnCnt -= 1;
+        GameManager.Instance.SpawnCnt -= 1;
 
         // 隊列を再設定
         SetFormation();
@@ -88,7 +91,7 @@ public class KidsManager : MonoBehaviour
     public void SetFormation()
     {
         // プレイヤーから定位置までの更新
-        GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>(); // マネージャーを取得
+        GameManager gamemanager = GameManager.Instance; // マネージャーを取得
         int SpawnCnt = 0;
         Kids Obj = m_Top;
 
@@ -108,7 +111,7 @@ public class KidsManager : MonoBehaviour
     public void SetAvoid()
     {
         // プレイヤーから定位置までの更新
-        GameManager gamemanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>(); // マネージャーを取得
+        GameManager gamemanager = GameManager.Instance; // マネージャーを取得
         int SpawnCnt = 0;
         Kids Obj = m_Top;
 

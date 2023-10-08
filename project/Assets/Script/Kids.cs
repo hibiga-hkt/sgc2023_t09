@@ -5,7 +5,6 @@ using UnityEngine;
 public class Kids : MonoBehaviour
 {
     private Vector3 m_setpos;   // プレイヤーからの距離
-    static private int m_nSpawnCnt = -1; // 合計生成数
     private Kids m_Next;        // ネクスト
     private Kids m_prev;        // 手前
     private int m_Idx;           // 番号
@@ -31,22 +30,10 @@ public class Kids : MonoBehaviour
         set { m_setpos = value; }
     }
 
-    static public int SpawnCnt
-    {
-        get { return m_nSpawnCnt; }
-        set { m_nSpawnCnt = value; }
-    }
-
     public int Idx
     {
         get { return m_Idx; }
         set { m_Idx = value; }
-    }
-
-    Kids()
-    {
-        m_Idx = SpawnCnt;
-        SpawnCnt += 1;
     }
 
     // Start is called before the first frame update
